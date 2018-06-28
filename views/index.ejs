@@ -1,0 +1,35 @@
+<%include ./partials/header.ejs%>
+
+    <h1>Index of all blog posts</h1>
+
+    <% blogPosts.forEach (function (blogPosts){ %>
+        <div class="ui main container segment">
+            <div class="ui items">
+                <div class="item">
+                    <div class="image">
+                        <img class="ui fluid centered rounded image" src="<%=blogPosts.image%>">
+                    </div>
+                    <div class="content">
+                        <h2 class="header">
+                            <%=blogPosts.title%>
+                        </h2>
+                        <div class="description">
+                            <p>
+                                <%=blogPosts.body.substring(0,100)%>.....
+                            </p>
+                        </div>
+                        <div class="extra">
+                            <span>
+                                <h5>
+                                    <%=blogPosts.date.toDateString()%>
+                                </h5>
+                            </span>
+                            <a href="/blogs/<%=blogPosts._id%>">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <%})%>
+
+<%include ./partials/footer.ejs%>

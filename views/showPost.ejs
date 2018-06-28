@@ -1,0 +1,23 @@
+<%include ./partials/header.ejs%>
+
+    <div class="ui main text container segment">
+        <div class="ui huge header">
+            <%=showPost.title%>
+        </div>
+        <div class="ui top attached">
+            <div class="item">
+                <div class="content">
+                    <h5><%=showPost.date.toDateString()%></h5>
+                </div>
+                <img class="ui fluid centered rounded image" src="<%=showPost.image%>">
+                <div class="description">
+                    <p><%=showPost.body%></p>
+                </div>
+                <form action="/blogs/<%=showPost._id%>?_method=DELETE" method="POST">
+                    <button type="submit" class="ui red basic button">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<%include ./partials/footer.ejs%>

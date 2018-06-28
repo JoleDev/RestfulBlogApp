@@ -1,0 +1,24 @@
+<%include ./partials/header.ejs%>
+
+    <div class="ui main text container segment">
+        <div class="ui huge header">
+            New Blog Post
+        </div>
+        <form class="ui form" action="/blogs" method="POST">
+            <div class="field">
+                <label>Title</label>
+                <input type="text" name="newPost[title]" placeholder="Post title">
+            </div>
+            <div class="field">
+                <label>Image</label>
+                <input type="text" name="newPost[image]" placeholder="Paste your post image url here">
+            </div>
+            <div class="field">
+                <label>Post</label>
+                <textarea name="newPost[body]"></textarea>
+            </div>
+            <input class="ui primary button" type="submit">
+        </form>
+    </div>
+
+<%include ./partials/footer.ejs%>
